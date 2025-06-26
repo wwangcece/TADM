@@ -48,7 +48,7 @@
 
 ```bash
 # Clone this repository
-git clone https://github.com/wwangcece/SGDM.git
+git clone https://github.com/wwangcece/TADM.git
 
 # Create a conda environment with Python >= 3.9
 conda create -n TADM python=3.9
