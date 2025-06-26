@@ -1,0 +1,15 @@
+accelerate launch --num_processes=2 --gpu_ids="0,1" --main_process_port 29301 src/train_dfrm.py \
+    --base_config="./configs/tadm_train.yaml" \
+    --scale_factor 16 \
+    --output_dir="./path/to/dfrm/exp" \
+    --learning_rate 1e-4 \
+    --train_batch_size 32 \
+    --dataloader_num_workers 32 \
+    --num_training_epochs 1000 \
+    --max_train_steps 500000 \
+    --checkpointing_steps 5000 \
+    --eval_freq 5000 \
+    --lr_step_rules "1:100000,0.5:100000,0.5:100000,1" \
+    --lr_scheduler "piecewise_constant" \
+    --lambda_lr 3 \
+    --lambda_z 1

@@ -1,0 +1,23 @@
+sf: 16
+
+train:
+  hq_dataroot: 'set/to/HR/path'
+  hq_latent_dataroot: 'set/to/z_HR/path'
+  lq_dataroot: 'empty'
+  hq_text_dataroot: 'empty'
+  out_size: 512
+  crop_type: none # random center none
+  use_hflip: false
+  use_rot: false
+  data_len: -1
+
+validation:
+  hq_dataroot: 'set/to/HR/path'
+  hq_latent_dataroot: 'set/to/z_HR/path'
+  lq_dataroot: 'empty'
+  hq_text_dataroot: 'empty'
+  out_size: 768
+  crop_type: none
+  use_hflip: false
+  use_rot: false
+  data_len: -1

@@ -1,0 +1,12 @@
+sf: 16
+
+test:
+  hq_dataroot: 'set/to/HR/path'
+  lq_dataroot: 'empty'
+  hq_latent_dataroot: 'empty'
+  hq_text_dataroot: 'empty'
+  out_size: 0
+  crop_type: none
+  use_hflip: false
+  use_rot: false
+  data_len: -1

@@ -1,0 +1,23 @@
+accelerate launch --num_processes=2 --gpu_ids="0,1" --main_process_port 29301 src/train_tadm.py \
+    --base_config="./configs/tadm_train.yaml" \
+    --scale_factor 16 \
+    --dfrm_net_path="path/to/pretrained/dfrm" \
+    --output_dir="./path/to/dfrm/exp" \
+    --resolution 512 \
+    --learning_rate 1e-4 \
+    --train_batch_size 2 \
+    --dataloader_num_workers 8 \
+    --num_training_epochs 200 \
+    --max_train_steps 40000 \
+    --enable_xformers_memory_efficient_attention \
+    --checkpointing_steps 500 \
+    --eval_freq 500 \
+    --mixed_precision bf16 \
+    --lora_rank_unet 48 \
+    --lora_rank_vae 16 \
+    --set_grads_to_none \
+    --gradient_accumulation_steps 4 \
+    --lr_step_rules "1:10000,0.5:10000,0.5:10000,1" \
+    --lr_scheduler "piecewise_constant" \
+    --lambda_lpips 5 \
+    --lambda_l2 2
